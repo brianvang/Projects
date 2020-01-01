@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    
+    <script type="text/JavaScript" src="restaurant.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+
+    <style>
+        body {
+        background-color: palegreen;
+        font-family: arial, helvetica, sans-serif;
+        color: darkgreen;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: justify;
+        }
+        
+        table, th, td {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        
+        }
+        
+        table {
+            width: auto;
+            margin: auto;
+            background-color: lightgreen;
+        }
+        
+        th {
+            font-size: 1.3em;
+        }
+
+    header {
+        background-color: mediumseagreen;
+        font-family: arial, helvetica, sans-serif;
+        color: darkgreen;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+   nav {
+        text-align: left;
+    }
+    
+    nav .btn:hover {
+        background-color: forestgreen;
+        color: lightgreen;
+        font-weight: bold;
+    }
+    
+    nav .btn {
+        background-color: darkgreen;
+        color: lightgreen;
+    }
+    
+    footer {
+    background-color: mediumseagreen;
+    color: darkgreen;
+    text-align: center;
+    }
+    
+</style>
+    
+    </head>
+
+<body>
+    <main>
+        <header>
+            <h1>Pho-tastic Restaurant</h1>
+        </header>
+        
+        <nav>
+            <hr />
+            <p><a href="index.html" class="btn badge-tab">Home</a> <a href="menu.html" class="btn badge-tab">Menu</a></p>
+            <hr />
+        </nav>
+        
+        <section>
+            <article id="contactus">
+                <form name="contact" method="POST" action="submit.html" onsubmit="return validateItems()">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName">
+                    <br />
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName">
+                    <br />
+                    <label for="phone">Phone Number:</label>
+                    <input tye="text" id="phone" name="phone">
+                    <br />
+                    <label for="reason">Reason for inquiry:</label>
+                    <select id="reason" name="reason">
+                        <option value="catering">Catering</option>
+                        <option value="privateparty">Private Party</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br />
+                    
+                    <label for="info">Additional Information:</label>
+                    <textarea id="info" name="info"></textarea>
+                    <br />
+                    Have you been to the restaurant?
+                    <input type="radio" id="choice1" name="questionnaire" value="no">
+                        <label for="choice1">Yes</label>
+                    <input type="radio" id="choice2" name="questionnaire" value="no">
+                        <label for="choice2">No</label>
+                    <br />                    
+                
+                    Best day to contact you: 
+                    <input type="checkbox" id="monday" name="bestday" value="monday">
+                        <label for="monday">Monday</label>
+                    <input type="checkbox" id="tuesday" name="bestday" value="tuesday">
+                        <label for="tuesday">Tuesday</label>
+                    <input type="checkbox" id="wednesday" name="bestday" value="wednesday">
+                        <label for="wednesday">Wednesday</label>
+                    <input type="checkbox" id="thursday" name="bestday" value="thursday">
+                        <label for="thursday">Thursday</label>
+                    <input type="checkbox" id="friday" name="bestday" value="friday">
+                        <label for="friday">Friday</label>
+                    <input type="checkbox" id="saturday" name="bestday" value="saturday">
+                        <label for="saturday">Saturday</label>
+                    <input type="checkbox" id="sunday" name="bestday" value="sunday">
+                        <label for="sunday">Sunday</label>
+                    <br />
+                    
+                    <input type="submit" name="submit" value="Send Request">
+                    
+                    
+                </form>  
+                
+                
+            </article>
+
+        </section>
+        
+        <footer>
+        <hr />
+            <p>1234 Chicken Noodle Street, Saint Paul, Minnesota, 55555</p>
+            <p>(651) 222-1234</p>
+            <p>&copy; 2020 PHO-TASTIC RESTAURANT. All rights reserved.</p>
+        </footer>
+    </main>
+    <!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
