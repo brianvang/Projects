@@ -7,8 +7,11 @@
     <title>Contact Us</title>
     
     <script type="text/JavaScript" src="restaurant.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    
     <style>
         body {
         background-color: palegreen;
@@ -18,14 +21,26 @@
         margin: 0 auto;
         text-align: justify;
         }
+           
+    h1, h3 {
+        font-family: fantasy, sans-serif;
+    }
         
         table, th, td {
             border-collapse: collapse;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-        
         }
+        
+        .page-header {
+        background-color: mediumseagreen;
+        font-family: arial, helvetica, sans-serif;
+        color: darkgreen;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
         
         table {
             width: auto;
@@ -72,20 +87,19 @@
     </head>
 
 <body>
-    <main>
-        <header>
-            <h1>Pho-tastic Restaurant</h1>
-        </header>
+    <div class="container"> <!-- All page content should be inside this .container div -->
+       <div class="page-header">
+            <h1 class="display-1>">Pho-tastic Restaurant</h1>
+        </div>
         
         <nav>
-            <hr />
-            <p><a href="index.html" class="btn badge-tab">Home</a> <a href="menu.html" class="btn badge-tab">Menu</a></p>
-            <hr />
+            <a class="btn badge-pill" href="index.html"><span class="oi" data-glyph="home"></span><img src="/open-iconic/svg/home.svg"></a><a class="btn badge-pill" href="menu.html">Menu</a><a class="btn badge-pill" href="#">Contact Us</a>
         </nav>
         
         <section>
             <article id="contactus">
                 <form name="contact" method="POST" action="submit.html" onsubmit="return validateItems()">
+                    <div class="form-group">
                     <label for="firstName">First Name:</label>
                     <input type="text" id="firstName" name="firstName">
                     <br />
@@ -115,26 +129,33 @@
                     <br />                    
                 
                     Best day to contact you: 
-                    <input type="checkbox" id="monday" name="bestday" value="monday">
-                        <label for="monday">Monday</label>
-                    <input type="checkbox" id="tuesday" name="bestday" value="tuesday">
-                        <label for="tuesday">Tuesday</label>
-                    <input type="checkbox" id="wednesday" name="bestday" value="wednesday">
-                        <label for="wednesday">Wednesday</label>
-                    <input type="checkbox" id="thursday" name="bestday" value="thursday">
-                        <label for="thursday">Thursday</label>
-                    <input type="checkbox" id="friday" name="bestday" value="friday">
-                        <label for="friday">Friday</label>
-                    <input type="checkbox" id="saturday" name="bestday" value="saturday">
-                        <label for="saturday">Saturday</label>
-                    <input type="checkbox" id="sunday" name="bestday" value="sunday">
-                        <label for="sunday">Sunday</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="monday" name="bestday" value="monday">
+                        <label class="form-check-label" for="monday">Monday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="tuesday" name="bestday" value="tuesday">
+                        <label class="form-check-label" for="tuesday">Tuesday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="wednesday" name="bestday" value="wednesday">
+                        <label class="form-check-label" for="wednesday">Wednesday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="thursday" name="bestday" value="thursday">
+                        <label class="form-check-label" for="thursday">Thursday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"t type="checkbox" id="friday" name="bestday" value="friday">
+                        <label class="form-check-label" for="friday">Friday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="saturday" name="bestday" value="saturday">
+                        <label class="form-check-label" for="saturday">Saturday</label></div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="sunday" name="bestday" value="sunday">
+                        <label class="form-check-label" for="sunday">Sunday</label></div>
                     <br />
-                    
+
                     <input type="submit" name="submit" value="Send Request">
-                    
-                    
-                </form>  
+                
+                    </div> 
+                </form>
                 
                 
             </article>
@@ -148,6 +169,8 @@
             <p>&copy; 2020 PHO-TASTIC RESTAURANT. All rights reserved.</p>
         </footer>
     </main>
+    </div>        
+        
     <!-- CDN links copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
